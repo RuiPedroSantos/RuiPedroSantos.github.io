@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     
     "title": {
-      "text": "New Covid cases",
+      "text": "New Covid-19 cases",
       "subtitle":"By region",
       "subtitleFontStyle":"italic",
       "subtitleFontSize":10,
