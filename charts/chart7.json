@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "Productivity UK",
+  "title": {
+    "text": "Brent Spot Price, 1987-2020",
+    "subtitle": "Dollars per barrel. Source: U.S. Energy Information Administration",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/RuiPedroSantos/RuiPedroSantos.github.io/main/data/Brent.csv"
+  },
+  "height": 320,
+  "width": 350,
+  "mark": {
+    "type": "line",
+    "point": false,
+    "interpolate": "monotone",
+    "color": "darkblue"
+  },
+  "encoding": {
+    "x": {
+      "field": "Date",
+      "type": "temporal",
+      "title": "Year",
+      "axis": {"grid": false, "labelSeparation": 10, "ticks": false}
+    },
+    "y": {
+      "field": "Price",
+      "title": "Brent price per barrel ($)",
+      "type": "quantitative",
+      "axis": {"grid": false}
+    }
+  },
+  "config": {}
+}
