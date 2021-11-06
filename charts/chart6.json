@@ -1,0 +1,37 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A simple bar chart with embedded data.",
+  "title": {
+    "text": "Facebook users in the United States as of July 2021",
+    "subtitle": "Distribution by age group",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "height": 300,
+  "width": 350,
+  "data": {
+    "values": [
+      {"a": "13-17", "b": 2.9},
+      {"a": "18-24", "b": 18.1},
+      {"a": "25-34", "b": 25.7},
+      {"a": "35-44", "b": 18.1},
+      {"a": "45-54", "b": 13.6},
+      {"a": "55-64", "b": 11},
+      {"a": "+65", "b": 10.6}
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "a",
+      "title": "Age gorup",
+      "type": "nominal",
+      "axis": {"labelAngle": 0}
+    },
+    "y": {"field": "b", "title": "Percentage of users", "type": "quantitative"},
+    "color": {"value": "#4267B2"}
+  },
+  "config": {}
+}
