@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Pollution data using satellite imagary from emissions API. The chart makes two separate API calls, one to get the UK data, and one to get the data for a specific point, in this case the coordinates for the city of Bristol.",
+  "title": {
+    "text": "Ozone - Portugal vs Brazil",
+    "subtitle": "Average daily Ozone concentration for Portugal (red) and Brazil (green)",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "width": 300,
+  "height": 350,
+  "encoding": {
+    "x": {"field": "end", "type": "temporal", "title": null},
+    "y": {
+      "field": "average",
+      "type": "quantitative",
+      "scale": {"domain": [0.08, 0.23]},
+      "title": null
+    }
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "https://api.v2.emissions-api.org/api/v2/ozone/average.json?country=pt&begin=2010-02-01&end=2022-07-01"
+      },
+      "mark": {"type": "circle", "color": "red", "opacity": 0.5}
+    },
+    {
+      "data": {
+        "url": "https://api.v2.emissions-api.org/api/v2/ozone/average.json?country=bra&begin=2010-02-01&end=2022-07-01"
+      },
+      "mark": {"type": "circle", "color": "green", "opacity": 0.3}
+    }
+  ],
+  "config": {}
+}
