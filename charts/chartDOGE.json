@@ -20,7 +20,7 @@
     "mark": {"type": "line", 
     "point": false,
     "clip": true,
-    "color": "firebrick"
+    "color": "blue"
     },
    
     "encoding": {
