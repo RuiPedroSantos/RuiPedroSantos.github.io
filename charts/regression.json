@@ -1,0 +1,56 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/RuiPedroSantos/RuiPedroSantos.github.io/main/data/TSLABTC.csv"
+  },
+  "height": 300,
+  "width": 390,
+  "title": {
+    "text": "Regressing the Tesla's share price on the price of Bitcoin over 2021 (in USD)",
+    "subtitle": "Source: Yahoo Finance",
+    "subtitleFontStyle": "italic"
+  },
+  "layer": [
+    {
+      "mark": {"type": "point", "color": "red"},
+      "encoding": {
+        "x": {
+          "field": "Tesla",
+          "title": "Tesla",
+          "type": "quantitative",
+          "scale": {"domain": [500, 1300]},
+          "axis": {"domain": true}
+        },
+        "y": {
+          "field": "BTC",
+          "title": "Bitcoin",
+          "type": "quantitative",
+          "scale": {"domain": [25000, 70000]}
+        }
+      }
+    },
+    {
+      "mark": {"type": "line", "color": "black"},
+      "transform": [{"regression": "Tesla", "on": "BTC"}],
+      "encoding": {
+        "x": {"field": "Tesla", "type": "quantitative"},
+        "y": {"field": "BTC", "type": "quantitative"}
+      }
+    },
+    {
+      "transform": [
+        {"regression": "Tesla", "on": "BTC", "params": true},
+        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+      ],
+      "mark": {
+        "type": "text",
+        "color": "red",
+        "x": "width",
+        "align": "right",
+        "y": -10
+      },
+      "encoding": {"text": {"type": "nominal", "field": "R2"}}
+    }
+  ],
+  "config": {}
+}
