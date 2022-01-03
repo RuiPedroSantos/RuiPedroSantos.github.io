@@ -1,0 +1,26 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Top 10 countries with highest healthcare expenditure per capita",
+    "subtitle": "In 2019 and PPP (U.S. Dollars). Source: OECD",
+    "subtitleFontStyle": "italic"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/RuiPedroSantos/RuiPedroSantos.github.io/main/data/healthcare_exp_pc.csv",
+    "format": {"type": "csv"}
+  },
+  "height": 300,
+  "width": 350,
+  "mark": {"type": "bar", "color": "#0fd6d6"},
+  "encoding": {
+    "x": {
+      "field": "Country",
+      "type": "nominal",
+      "title": "",
+      "axis": {"labelAngle": 20},
+      "sort": {"field": ["Country"], "order": ["ascending"]}
+    },
+    "y": {"field": "2019", "type": "quantitative", "title": ""}
+  },
+  "config": {}
+}
