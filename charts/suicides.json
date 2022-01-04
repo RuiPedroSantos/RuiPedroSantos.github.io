@@ -1,0 +1,53 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Suicide registrations in the 5 largest cities in England",
+    "subtitle": "From 2001 to 2020 - click on legend. Source:ONS.",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "",
+    "color": "black"
+  },
+  "description": "Suicide",
+  "data": {
+    "url": "https://raw.githubusercontent.com/RuiPedroSantos/RuiPedroSantos.github.io/main/data/suicides-in-the-uk-2020-v1.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {
+      "filter": {
+        "field": "Geography",
+        "oneOf": ["London", "Manchester", "Birmingham", "Leeds", "Liverpool"]
+      }
+    }
+  ],
+  "height": 300,
+  "width": 350,
+  "mark": {"type": "area", "point": false},
+  "selection": {
+    "region": {"type": "multi", "fields": ["Geography"], "bind": "legend"}
+  },
+  "encoding": {
+    "x": {
+      "field": "Time",
+      "type": "temporal",
+      "title": null,
+      "axis": {"grid": false}
+    },
+    "y": {
+      "field": "V4_0",
+      "type": "quantitative",
+      "title": null,
+      "axis": {"grid": false}
+    },
+    "color": {
+      "field": "Geography",
+      "type": "nominal",
+      "scale": {"scheme": "inferno"},
+      "title": null,
+      "legend": {"orient": "bottom", "columns": 2, "fillColor": "#FcFdFd"}
+    },
+    "opacity": {"condition": {"selection": "region", "value": 1}, "value": 0.1}
+  },
+  "config": {}
+}
