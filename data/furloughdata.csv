@@ -1,9 +1,9 @@
-Date, Unemployment rate 
-2020 MAY, 4.1
-2020 JUN, 4.3
-2020 JUL, 4.5
-2020 AUG, 4.8
-2020 SEP, 5
-2020 OCT, 5.1
-2020 NOV, 5.2
-2020 DEC, 5.1
+Date,unemployment_rate,furloughed_millions
+2020MAY,4.1,8.7
+2020JUN,4.3,9.3
+2020JUL,4.5,9.5
+2020AUG,4.8,9.6
+2020SEP,5,9.6
+2020OCT,5.1,9.6
+2020NOV,5.2,9.6
+2020DEC,5.1,9.9
