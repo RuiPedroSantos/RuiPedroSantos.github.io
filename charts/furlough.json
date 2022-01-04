@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": " UK Employments on furlough and unemployment rate",
+    "subtitle": "Source: ONS",
+    "subtitleFontStyle": "italic"
+  },
+  "width": 350,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/RuiPedroSantos/RuiPedroSantos.github.io/main/data/furloughdata.csv"
+  },
+  "encoding": {
+    "x": {
+      "field": "Date",
+      "type": "nominal",
+      "sort": ["0"],
+      "title": "",
+      "axis": {"labelAngle": 5, "labelFontSize": 10}
+    }
+  },
+  "layer": [
+    {
+      "mark": {"opacity": 0.5, "type": "bar", "color": "#eea60c"},
+      "encoding": {
+        "y": {
+          "field": "furloughed_millions",
+          "type": "quantitative",
+          "scale": {"domain": [0, 15]},
+          "title": "Number of employments on furlough (in millions)",
+          "axis": {"titleColor": "#eea60c"}
+        }
+      }
+    },
+    {
+      "mark": {"stroke": "#78337e", "type": "line", "interpolate": "monotone"},
+      "encoding": {
+        "y": {
+          "field": "unemployment_rate",
+          "type": "quantitative",
+          "scale": {"domain": [3.5, 5.5]},
+          "title": "Unemployment rate (%)",
+          "axis": {"titleColor": "#78337e"}
+        }
+      }
+    }
+  ],
+  "resolve": {"scale": {"y": "independent"}},
+  "config": {}
+}
