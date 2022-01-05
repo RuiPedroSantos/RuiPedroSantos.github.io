@@ -48,7 +48,7 @@ h2{
     border-radius: 25px;
     border-color: white;
     text-align: center;
-    padding: 20px;
+    padding: 30px;
     transition: padding 500ms, border-radius 500ms;
 }
 
