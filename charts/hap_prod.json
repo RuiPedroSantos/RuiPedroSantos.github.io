@@ -1,0 +1,60 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": {
+    "text": "Happiness and Productivity in 2020",
+    "subtitle": "Sources: World Happiness Report, OECD and World Bank",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "",
+    "color": "black"
+  },
+  "height": 300,
+  "width": 350,
+  "data": {
+    "url": "https://raw.githubusercontent.com/RuiPedroSantos/RuiPedroSantos.github.io/main/data/happinessandproductivity.csv"
+  },
+  "selection": {
+    "paintbrush": {"type": "multi", "on": "mouseover", "nearest": true},
+    "grid": {"type": "interval", "bind": "scales"}
+  },
+  "mark": {"type": "circle", "opacity": 0.8, "color": "darkorange"},
+  "encoding": {
+    "x": {
+      "field": "Productivity_per_person_per_hour",
+      "type": "nominal",
+      "axis": {
+        "title": "Productivity per person, per hour",
+        "grid": false,
+        "tickCount": 14,
+        "labelOverlap": "greedy"
+      }
+    },
+    "y": {
+      "field": "happiness2020",
+      "type": "quantitative",
+      "axis": {"title": "Happiness Index", "grid": false}
+    },
+    "size": {
+      "condition": {
+        "selection": "paintbrush",
+        "value": 400,
+        "init": {"value": 70}
+      },
+      "value": 70
+    },
+    "tooltip": [
+      {"field": "Country", "type": "ordinal", "title": "Country"},
+      {
+        "field": "Productivity_per_person_per_hour",
+        "type": "nominal",
+        "title": "Productivity"
+      },
+      {
+        "field": "happiness2020",
+        "type": "nominal",
+        "title": "Happiness"
+      }
+    ]
+  },
+  "config": {}
+}
