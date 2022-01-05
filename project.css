@@ -39,7 +39,7 @@ h2{
     color:rgb(215, 171, 76);
     font-family: 'Rubik', sans-serif;
     font-weight: 1000;
-    font-size: 20px;
+    font-size: 30px;
 }
 .chart{
     background-color: white;
@@ -48,7 +48,7 @@ h2{
     border-radius: 25px;
     border-color: white;
     text-align: center;
-    padding: 30px;
+    padding: 20px;
     transition: padding 500ms, border-radius 500ms;
 }
 
