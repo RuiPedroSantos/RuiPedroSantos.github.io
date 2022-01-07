@@ -1,0 +1,64 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/RuiPedroSantos/RuiPedroSantos.github.io/main/data/hap_prod_regression.csv"
+  },
+  "height": 300,
+  "width": 390,
+  "title": {"text": "", "subtitle": "", "subtitleFontStyle": "italic"},
+  "layer": [
+    {
+      "mark": {"type": "point", "color": "darkorange", "opacity": "0.5"},
+      "encoding": {
+        "x": {
+          "field": "Productivity",
+          "title": "Productivity",
+          "type": "quantitative",
+          "scale": {"domain": [0, 130]},
+          "axis": {"domain": true}
+        },
+        "y": {
+          "field": "Life satisfaction in Cantril Ladder",
+          "title": "Life satisfaction score",
+          "type": "quantitative",
+          "scale": {"domain": [3, 9]}
+        }
+      }
+    },
+    {
+      "mark": {"type": "line", "color": "black"},
+      "transform": [
+        {
+          "regression": "Productivity",
+          "on": "Life satisfaction in Cantril Ladder"
+        }
+      ],
+      "encoding": {
+        "x": {"field": "Productivity", "type": "quantitative"},
+        "y": {
+          "field": "Life satisfaction in Cantril Ladder",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "regression": "Productivity",
+          "on": "Life satisfaction in Cantril Ladder",
+          "params": true
+        },
+        {"calculate": "'R²: '+format(datum.rSquared, '.5f')", "as": "R2"}
+      ],
+      "mark": {
+        "type": "text",
+        "color": "black",
+        "x": "width",
+        "align": "right",
+        "y": -10
+      },
+      "encoding": {"text": {"type": "nominal", "field": "R2"}}
+    }
+  ],
+  "config": {}
+}
