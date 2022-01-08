@@ -1,0 +1,68 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/RuiPedroSantos/RuiPedroSantos.github.io/main/data/bysectoruk.csv"
+  },
+  "title": {
+    "text": "",
+    "subtitle": [],
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10
+  },
+  "height": 300,
+  "width": 350,
+  "config": {"background": "#ffffff", "view": {"stroke": "transparent"}},
+  "repeat": {"layer": ["happiness", "productivity"]},
+  "spec": {
+    "mark": {"type": "bar", "height": {"band": 1}, "baseline": "top"},
+    "encoding": {
+      "y": {
+        "field": "industry_2020",
+        "type": "nominal",
+        "title": null,
+        "scale": {"padding": 0.3},
+        "axis": {
+          "bandPosition": 0,
+          "grid": true,
+          "domain": false,
+          "ticks": false,
+          "labelColor": "#050505",
+          "labelAlign": "left",
+          "labelBaseline": "middle",
+          "labelPadding": 0,
+          "labelOffset": -17,
+          "domainColor": "#000000",
+          "tickColor": "#0a0a0a",
+          "gridColor": "darkgray"
+        }
+      },
+      "x": {
+        "aggregate": "sum",
+        "field": {"repeat": "layer"},
+        "type": "quantitative",
+        "title": "% change in 2020",
+        "scale": {"domain": [-7, 15]},
+        "axis": {"grid": false}
+      },
+      "color": {
+        "datum": {"repeat": "layer"},
+        "title": "",
+        "scale": {"range": ["#ffa500", "#9370db"]},
+        "legend": {"orient": "bottom"}
+      },
+      "yOffset": {"datum": {"repeat": "layer"}},
+      "tooltip": [
+        {
+          "field": "happiness",
+          "type": "quantitative",
+          "title": "Happiness score % change"
+        },
+        {
+          "field": "productivity",
+          "type": "quantitative",
+          "title": "Productivity % change"
+        }
+      ]
+    }
+  }
+}
