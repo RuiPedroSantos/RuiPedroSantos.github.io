@@ -41,7 +41,6 @@
     "x": {
       "field": "Year",
       "type": "temporal",
-      "scale": {"domain": [2006, 2017]},
       "title": "",
       "axis": {"grid": false}
     },
