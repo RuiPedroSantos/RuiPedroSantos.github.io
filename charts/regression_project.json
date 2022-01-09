@@ -5,7 +5,11 @@
   },
   "height": 300,
   "width": 390,
-  "title": {"text": "", "subtitle": "", "subtitleFontStyle": "italic"},
+  "title": {
+    "text": "Relationship between happiness and productivity",
+    "subtitle": "Source: OurWorldinData.org",
+    "subtitleFontStyle": "italic"
+  },
   "layer": [
     {
       "mark": {"type": "point", "color": "darkorange", "opacity": "0.5"},
