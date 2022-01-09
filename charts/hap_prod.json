@@ -11,7 +11,7 @@
   "height": 300,
   "width": 390,
   "data": {
-    "url": "https://raw.githubusercontent.com/RuiPedroSantos/RuiPedroSantos.github.io/main/data/happinessandproductivity.csv"
+    "url": "https://raw.githubusercontent.com/RuiPedroSantos/RuiPedroSantos.github.io/main/data/happinessandproductivit.csv"
   },
   "selection": {
     "paintbrush": {"type": "multi", "on": "mouseover", "nearest": true},
@@ -20,10 +20,10 @@
   "mark": {"type": "circle", "opacity": 0.8, "color": "darkorange"},
   "encoding": {
     "x": {
-      "field": "Productivity_per_person_per_hour",
-      "type": "nominal",
+      "field": "Productivity",
+      "type": "quantitative",
       "axis": {
-        "title": "Productivity per person, per hour",
+        "title": "Productivity per person, per hour ($)",
         "grid": false,
         "tickCount": 14,
         "labelOverlap": "greedy"
@@ -45,15 +45,11 @@
     "tooltip": [
       {"field": "Country", "type": "ordinal", "title": "Country"},
       {
-        "field": "Productivity_per_person_per_hour",
-        "type": "nominal",
-        "title": "Productivity"
+        "field": "Productivity",
+        "type": "quantitative",
+        "title": "Productivity ($)"
       },
-      {
-        "field": "happiness2020",
-        "type": "nominal",
-        "title": "Happiness"
-      }
+      {"field": "happiness2020", "type": "nominal", "title": "Happiness score"}
     ]
   },
   "config": {}
