@@ -2,7 +2,6 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Happiness in the G7 Countries",
-    "fontSize": 15,
     "subtitle": "Cantril ladder self-reported life satisfaction. Source: OurWorldinData.org",
     "subtitleFontStyle": "italic",
     "subtitleFontSize": 10,

@@ -2,7 +2,6 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Producitivity in the G7 Countries",
-    "fontSize": 15,
     "subtitle": "Producitivity is measured as output per hour (in USD PPP). Source: OurWorldinData.org",
     "subtitleFontStyle": "italic",
     "subtitleFontSize": 10,
