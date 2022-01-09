@@ -23,7 +23,7 @@
       "field": "Productivity",
       "type": "quantitative",
       "axis": {
-        "title": "Productivity per person, per hour ($)",
+        "title": "Productivity ($)",
         "grid": false,
         "tickCount": 14,
         "labelOverlap": "greedy"

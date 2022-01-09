@@ -54,26 +54,27 @@
 
 
 <!--Chart 1 -->
-<h4>Scatterplot</h4>
-<p>Happiness and productivity in 2020 in some countries. Data generated <a href="https://github.com/RuiPedroSantos/RuiPedroSantos.github.io/blob/main/Untitled9%20(2).ipynb">here</a></p>
+<h4>In this project, I will heavily rely on the data from the World Happiness Report to measure self-reported life satisfaction across countries and years. The original source of data of the World Happiness Report is Gallup World Poll surveys, a set of national representative surveys based on the Cantril ladder life scale. </h4>
+<p>The scatter plot below shows that in 2020 there was a slightly positive correlation between happiness and productivity, which is measured as output per hour of work in USD. Interestingly, some outliers include South American nations such as Chile, Mexico and Costa Rica, which have relatively high happiness scores despite the low levels of productivity. On the other end of the spectrum, Luxembourg’s happiness score is just slightly higher than Costa Rica’s score, but its economy is extremely productive, perhaps because of its small population and strong financial sector.</p>
   <div class="chart" id="chart1">
       <script>
         var myChart1 = "charts/hap_prod.json";
         vegaEmbed('#chart1', myChart1);
       </script>
   </div>
+<p>Happiness data was downloaded in a csv file from the World Happiness Report, and productivity data was scrapped from expertmarket.co.uk, which compiles data from the World Bank and OECD. I then merged the data in Python (notebook) and cleaned the data, namely renamed columns and removed $ signs, so that Vega-Lite could read it as quantitative data and not cause distortions in the graph.</p>
 
     <!--Chart 4 and 5 -->
-<h4>Line chart</h4>
-<p>Happiness and productivity in the G7. Data generated <a href="https://github.com/RuiPedroSantos/RuiPedroSantos.github.io/blob/main/Untitled11.ipynb">here</a></p>
+<h4>G7 Countries</h4>
+<p>On a macroeconomic level, some of the most powerful nations depicted in the charts below show that happiness and productivity may not necessarily go hand in hand. While productivity in $ with adjusted purchasing power parity has increased across the 7 countries during the period in analysis, while happiness scores fell in every country, with the exception of Germany and the UK.</p>
   <div class="chart" id="chart4">
       <script>
         var myChart4 = "charts/prod_g7.json";
         vegaEmbed('#chart4', myChart4);
       </script>
   </div>
-  <p></p>
-</body>
+  <p>Also, the fluctuation in happiness trends is significantly higher than productivity trends, suggesting that happiness might not actually have a moderate impact on productivity.</p>
+
 
   <div class="chart" id="chart5">
     <script>
@@ -81,10 +82,10 @@
       vegaEmbed('#chart5', myChart5);
     </script>
 </div>
-
+<p>The data for the graphs above was collected from OurWorldinData.org and cleaned using Python (notebook), with the purpose of only showing values for the G7 countries.</p>
     <!--Chart 3 -->
-<h4>Bars</h4>
-<p>Happiness and productivity in some sectors. Data collected from different sources and manually introduced in a csv file</p>
+<h4>Sectorial satisfaction and productivity</h4>
+<p>One of the main challenges of this project was the lack of availability of happiness and productivity data on a microeconomic level, making it hard to establish a relationship between employees’ satisfaction and their corresponding productivity. Nonetheless, I was able to find data on the 2020 12-month change in employee happiness by sector from Glint, a subsidiary company of Linkedin. I inputted the data manually and compared it to the sectorial change in productivity in the UK (extracting data from the ONS). </p>
   <div class="chart" id="chart3">
       <script>
         var myChart3 = "charts/project_sector.json";
@@ -92,16 +93,25 @@
       </script>
   </div>
 
+  <p>It is worth noting that this comparison may not be accurate for two reasons: first, happiness data may not be representative as the survey respondents include people that work outside of the UK; and second, because there are minor differences in the definition of the sectors between Glint and the ONS, leading to a potential measurement error. Hence, this might be the reason for the visible opposite changes in happiness and productivity levels in the financial services and manufacturing sectors in 2020, especially after considering that happy workers are approximately 12% more productive, as suggested by Proto et al. (2015). </p>
+
     <!--Chart 2 -->
-<h4>Regression</h4>
-<p>Happiness and productivity. Data generated <a href="https://github.com/RuiPedroSantos/RuiPedroSantos.github.io/blob/main/Untitled11%20(1).ipynb">here</a></p>
+<h4>Relationship between happiness and productivity</h4>
+<p>Finally, I investigated the relationship between happiness and productivity, producing a regression that reveals a strong positive correlation between these two metrics, with a R-squared value of 0.49. The regression was constructed using data from OurWorldinData.org, with a dataset that covers more than 70 countries and various years. </p>
   <div class="chart" id="chart2">
       <script>
         var myChart2 = "charts/regression_project.json";
         vegaEmbed('#chart2', myChart2);
       </script>
   </div>
-      
+<p>I cleaned the data in Python (notebook) not only to overcome the problem of missing values but also to merge two files and to group data by country and year </p>
+<h3>Conclusion</h3>
+<p>Despite the limited availability of data about happiness and productivity on a microeconomic level, this project showed that on a macro scale there is a strong positive correlation between these two metrics. However, the regression’s findings are likely to suffer from omitted variable bias as there might be other factors, such as income or health, that are correlated with happiness and also have an impact on productivity.
+  Some of the main challenges I encountered were the periodicity of data (mostly yearly data) and the lack of a suitable API.
+  Finally, this project does not aim to establish causal inference and further work could be undertaken beyond the existing academic literature with the goal of helping companies and governments shape their well-being policies to boost productivity.
+  </p>
+
+</body>
 
 <!-- ///////////////////  END BODY //////////////////////////////////// -->
 
